@@ -1,11 +1,17 @@
 import React from 'react'
-import { Maincrosel } from '../../components/Navbar/Maincrosel'
 
+import HomesectionCarosol from '../../components/Homesectioncarosol/HomesectionCarosol'
+import Maincrosel from '../../components/HomeCarosel/Homecarolse'
 function Homepage() {
   return (
+    <>
     <div>
-        <Maincrosel/>
+       <Maincrosel/>
     </div>
+    <div>
+  <HomesectionCarosol/>
+    </div>
+    </>
   )
 }
 
