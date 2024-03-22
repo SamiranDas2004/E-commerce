@@ -6,7 +6,7 @@ import Button from '@mui/material/Button'
 
 function Maincrosel() {
 
-    const items = Maincarosoul.map((pic)=> <img class="flex justify-center items-center h-screen" width="" src={pic.image}/>)
+    const items = Maincarosoul.map((pic)=> <img class="flex justify-center w-full  items-center h-screen" width="" src={pic.image}/>)
   return (
     <div className='relative px-4 lg:px-4'>
     <div className='relative p-5'>
