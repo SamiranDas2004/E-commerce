@@ -2,7 +2,7 @@ import React from 'react'
 
 function HomesectionCard() {
   return (
-    <div className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>
+    <div className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3 border border-black'>
 
     <div className='h-[13rem] w-[10rem]'>
     <img className='object-cover object-top h-full w-full' src='https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/x/l/d/s-st28-vebnor-original-imagq6aqgh2hzv22.jpeg?q=70&crop=false'/>

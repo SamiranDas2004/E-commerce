@@ -12,6 +12,7 @@ function Maincrosel() {
     <div className='relative p-5'>
       <AliceCarousel
         mouseTracking
+        disableButtonsControls
         items={items}
         // autoPlay
         // autoPlayInterval={1000}
