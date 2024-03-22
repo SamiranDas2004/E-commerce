@@ -6,29 +6,28 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { Button } from "@mui/material";
 import { MensData } from "../../Data/mens";
 
-
-function HomesectionCarosol({data}) {
-  const [activeIndex, setactiveIndex] = useState(0);
+function HomesectionCarosol({ data=[], sectionName }) {
+  // const [activeIndex, setactiveIndex] = useState(0);
   const responsive = {
     0: { items: 1 },
     720: { items: 3 },
     1024: { items: 4 },
   };
 
-  const slidePrev = () => setactiveIndex(activeIndex - 1);
-  const slideNext = () => setactiveIndex(activeIndex + 1);
+  // const slidePrev = () => setactiveIndex(activeIndex - 1);
+  // const slideNext = () => setactiveIndex(activeIndex + 1);
 
-  const syncActiveIndex = ({ item }) => setactiveIndex(item);
+  // const syncActiveIndex = ({ item }) => setactiveIndex(item);
 
   const items = data.map((item) => <HomesectionCard product={item} />);
   return (
     <div className=" relative px- lg:px-8">
+    <h2 className=" text-2xl font-exrabold text-gray-800 py-5">{sectionName}</h2>
       <div className="relative p-6">
         <AliceCarousel
-        
-       disableDotsControls
-          onSlideChange={syncActiveIndex}
-          activeIndex={activeIndex}
+          disableDotsControls
+          // onSlideChange={syncActiveIndex}
+          // activeIndex={activeIndex}
           items={items}
           responsive={responsive}
           controlsStrategy="alternate"

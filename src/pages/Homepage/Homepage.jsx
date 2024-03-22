@@ -9,12 +9,12 @@ function Homepage() {
        <Maincrosel/>
     </div>
     <div className=' space-y-10 py-10 flex flex-col justify-center px-5 lg:px-10'>
-  <HomesectionCarosol data={MensData}/>
-  <HomesectionCarosol/>
-  <HomesectionCarosol/>
-  <HomesectionCarosol/>
-  <HomesectionCarosol/>
-  <HomesectionCarosol/>
+  <HomesectionCarosol data={MensData}  sectionName={"Men's Shirt"}/>
+  <HomesectionCarosol   data={MensData}  sectionName={"Men's Shoes"}/>
+  <HomesectionCarosol  data={MensData}  sectionName={"Men's kurta"}/>
+  <HomesectionCarosol  data={MensData}  sectionName={"Women Saree"}/>
+  <HomesectionCarosol data={MensData}  sectionName={"Women bag"}/>
+  <HomesectionCarosol data={MensData}  sectionName={"Women's Ware"}/>
     </div>
     </>
   )
