@@ -13,8 +13,11 @@
   ```
 */
 import { Fragment, useState } from 'react'
+import {} from '@mui/icons-material'
+import {Avatar, Button, Menu, MenuItem} from '@mui/material'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { deepPurple } from '@mui/material/colors'
 
 const navigation = {
   categories: [
@@ -173,7 +176,7 @@ export default function Navbar() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+              <Dialog.Panel className="relative  z-40 lg:hidden flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
@@ -320,7 +323,7 @@ export default function Navbar() {
               </div>
 
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <Popover.Group className="hidden lg:ml-8 lg:block  z-40 lg:self-stretch">
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
@@ -421,10 +424,45 @@ export default function Navbar() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+
+           {   true ? ( <div>       
+              <Avatar
+              className=' text-white'
+             // onClick={handelUserClick}
+              aria-controls={open?"basic-menu": undefined}
+              aria-expanded={open?"true":undefined}
+              aria-haspopup="true"
+              sx={{
+                bgcolor:deepPurple[500],
+                color:"white",
+                cursor:"pointer"
+              }}
+              >E</Avatar>
+
+              <Menu
+              id='basic-menu'
+           //   anchorEl={anchorEl}
+           //   open={openUserMenu}
+            //  onclose={handelCloseUserMenu}
+            MenuListProps={{
+              "aria-labelledby":"basic-button"
+            }}
+              >
+<MenuItem>Profile</MenuItem>
+<MenuItem>My orders</MenuItem>
+<MenuItem>Logout</MenuItem>
+              </Menu>
+                </div>)
+: (
+  <Button onClick={handelOpen}
+  className='text-sm font-medium text-gray-700 hover:text-gray-800'>
+    SignIn
+  </Button>
+)}
+                  {/* <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  </a> */}
+                  {/* <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Create account
                   </a>
@@ -433,14 +471,14 @@ export default function Navbar() {
                 <div className="hidden lg:ml-8 lg:flex">
                   <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
                     <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
+                      src="https://tailwindui.com/img/flags/flag-india.svg"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
-                    <span className="ml-3 block text-sm font-medium">CAD</span>
+                    <span className="ml-3 block text-sm font-medium">INR</span>
                     <span className="sr-only">, change currency</span>
                   </a>
-                </div>
+                </div> */}
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
@@ -463,6 +501,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </nav>
       </header>
