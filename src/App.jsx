@@ -5,6 +5,8 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
+import Product from './components/Product/Product'
+
 
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
   return (
     <>
     <div><Navbar/></div>
-    <div><Homepage/></div>
+<div><Product/></div>
     <div><Footer/></div>
     </>
   )
