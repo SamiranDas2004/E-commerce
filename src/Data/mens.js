@@ -4,7 +4,7 @@ export const MensData = [
       "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/j/o/t/m-black-formal-shirt-m-atlanta-impex-original-imagghhfcvmbpgct.jpeg?q=70&crop=false",
 
   price:"RS 300",
-  orignalPrice:"600",
+  originalPrice:"600",
   discount:"50% Off"
   
     },

@@ -18,7 +18,7 @@ Women Embroidered Georgette Straight Kurta</p>
       </div>
       <div className=' flex items-center space-x-2'>
       <p className=' font-semibold '>{Product.price}</p>
-      <p className=' line-through opacity-50'>{Product.orignalPrice}</p>
+      <p className=' line-through opacity-50'>{Product.originalPrice}</p>
       <p className='text-green-600 font-semibold'>{Product.discount}</p>
       </div>
       </div>
