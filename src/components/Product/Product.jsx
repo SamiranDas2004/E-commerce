@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -16,6 +16,8 @@ import {
 import Productcard from "./Pcard";
 import { MensData } from "../../Data/mens";
 import { filters, singleFilter } from "./FilterData";
+import FilterListIcon from '@mui/icons-material/FilterList';
+
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -281,6 +283,12 @@ export default function Product() {
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
+              <div>
+              <div className=" flex justify-between align-center">
+              <h2 className=" text-black font-bold">Filters</h2>
+              <FilterListIcon/>
+              </div>
+          
               <form className="hidden lg:block">
                 {filters.map((section) => (
                   <Disclosure
@@ -353,7 +361,9 @@ export default function Product() {
                             {/* <span className="font-medium text-gray-900">
                               {section.name}
                             </span> */}
-                            <FormLabel id="demo-radio-buttons-group-label">{section.name}</FormLabel>
+                            <FormLabel id="demo-radio-buttons-group-label">
+                              {section.name}
+                            </FormLabel>
 
                             <span className="ml-6 flex items-center">
                               {open ? (
@@ -372,19 +382,20 @@ export default function Product() {
                         </h3>
                         <Disclosure.Panel className="pt-6">
                           <div className="space-y-4">
-                          <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-  >
-                            {section.options.map((option, optionIdx) => (
-    <>
-     <FormControlLabel value={option.label} control={<Radio />} label={option.value} />
-
-    </>
-    
-
-                            ))}
+                            <RadioGroup
+                              aria-labelledby="demo-radio-buttons-group-label"
+                              defaultValue="female"
+                              name="radio-buttons-group"
+                            >
+                              {section.options.map((option, optionIdx) => (
+                                <>
+                                  <FormControlLabel
+                                    value={option.label}
+                                    control={<Radio />}
+                                    label={option.value}
+                                  />
+                                </>
+                              ))}
                             </RadioGroup>
                           </div>
                         </Disclosure.Panel>
@@ -393,11 +404,13 @@ export default function Product() {
                   </Disclosure>
                 ))}
               </form>
+              </div>
+            
 
               {/* Product grid */}
               <div className="lg:col-span-3 w-full">
                 <div className=" flex flex-wrap justify-center bg-white py-5">
-                  {MensData.slice(0, 8).map((Item) => (
+                  {MensData.map((Item) => (
                     <Productcard Product={Item} />
                   ))}
                 </div>
