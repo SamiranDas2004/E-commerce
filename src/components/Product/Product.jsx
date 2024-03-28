@@ -62,6 +62,12 @@ export default function Product() {
     navigate({ search: `?${query}` });
   };
   
+  const handelRadioFilter = (e, sectionId) => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set(sectionId, e.target.value);
+    const query = searchParams.toString();
+    navigate({ search: `?${query}` });
+};
 
   return (
     <div className="bg-white"> 
@@ -376,7 +382,8 @@ export default function Product() {
                                 {section.options.map((option, optionIdx) => (
                                   <>
                                     <FormControlLabel
-                                      value={option.label}
+                                    onChange={(e)=>handelRadioFilter(e,section.name)}
+                                      value={option.value}
                                       control={<Radio />}
                                       label={option.value}
                                     />

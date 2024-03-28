@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
 import Product from './components/Product/Product'
+import ProductDetails from './components/ProductDetails/ProductDetails'
 
 
 
@@ -15,7 +16,9 @@ function App() {
   return (
     <>
     <div><Navbar/></div>
-<div><Product/></div>
+{/* <div><Product/></div> */}
+
+<ProductDetails/>
     <div><Footer/></div>
     </>
   )
