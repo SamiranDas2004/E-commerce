@@ -7,6 +7,8 @@ import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
 import Product from './components/Product/Product'
 import ProductDetails from './components/ProductDetails/ProductDetails'
+import { Cable } from '@mui/icons-material'
+import Cart from './components/cart/Cart'
 
 
 
@@ -18,7 +20,8 @@ function App() {
     <div><Navbar/></div>
 {/* <div><Product/></div> */}
 
-<ProductDetails/>
+{/* <ProductDetails/> */}
+<Cart/>
     <div><Footer/></div>
     </>
   )
