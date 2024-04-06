@@ -5,13 +5,17 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-const steps = ['Login ', 'Add Address', 'Order summary','payment'];
+import {useLocation} from 'react-router-dom'
+const steps = ['Login', 'Add Address', 'OrderSummary', 'Payment'];
 
 export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
+  const location = useLocation();
+   const quarySearch= new URLSearchParams(location.search);
+   const step = quarySearch.get("step");
+console.log(step);
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -35,11 +39,28 @@ export default function HorizontalLinearStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      // You probably want to guard against something like this,
+      // it should never occur unless someone's actively trying to break something.
+      throw new Error("You can't skip a step that isn't optional.");
+    }
 
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   return (
-    <Box  sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep}>
+    <Box sx={{ width: '100%' }}>
+      <Stepper activeStep={step}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};

@@ -19,6 +19,7 @@ function App() {
       <div>
         <Navbar />
       </div>
+      {/* <Homepage/> */}
       {/* <div><Product/></div> */}
 
       {/* <ProductDetails/> */}
