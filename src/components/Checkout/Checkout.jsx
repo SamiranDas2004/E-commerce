@@ -126,7 +126,7 @@ export default function Checkout() {
             </Button>
           </Box>
           <div>
-            {activeStep===1?<AddDeliveryAddressForm/>:<Order/>}
+            {activeStep===1?<AddDeliveryAddressForm/>:activeStep===2?<Order/>:null}
           </div>
         </React.Fragment>
       )}

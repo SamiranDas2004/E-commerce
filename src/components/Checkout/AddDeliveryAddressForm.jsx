@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Button, Box, TextField } from "@mui/material";
 import Order from "./Order";
+import Address from "./Address";
 
 function AddDeliveryAddressForm() {
 
@@ -28,7 +29,7 @@ function AddDeliveryAddressForm() {
         <Grid item xs={4}>
           <div className="border rounded-md shadow-md h-80 overflow-y-scroll p-5">
             <div className="p-18 border-b cursor-pointer">
-              <Order />
+              <Address />
               <Button
                 sx={{ mt: 2, bgcolor: "step1" }}
                 size="large"
