@@ -10,6 +10,10 @@ import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { Cable } from "@mui/icons-material";
 import Cart from "./components/cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
+import Order from "./components/order/Order";
+import OrderDetails from "./components/order/OrderDetails";
+import { Route, Routes } from "react-router-dom";
+import CustomerRoutes from "./Routes/CustomerRoutes";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,16 +21,13 @@ function App() {
   return (
     <>
       <div>
-        <Navbar />
+      <Routes>
+        <Route path="/*" element={<CustomerRoutes/>}/>
+      </Routes>
       </div>
-      {/* <Homepage/> */}
-      {/* <div><Product/></div> */}
-
-      {/* <ProductDetails/> */}
-      {/* <Cart/> */}
-      <Checkout/>
+      
       <div>
-        <Footer />
+       
       </div>
     </>
   );

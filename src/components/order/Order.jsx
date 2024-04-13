@@ -1,8 +1,9 @@
 import React from 'react'
 import {Grid} from '@mui/material'
+import OrderCard from './OrderCard'
 
 const orderStatus=[
-    {lable:"on the way" ,value:' on_the_way'},
+    {lable:"On the way" ,value:' On_the_way'},
     {lable:"Delivered" ,value:' delivered'},
     {lable:"Cancelled" ,value:' cancelled'},
     {lable:" Returned" ,value:'returned'},
@@ -22,13 +23,23 @@ function Order() {
         <h1 className=' font-semibold'> 
         OrderStatus
         </h1>
+
+      {orderStatus.map((option)=>  <div className=' flex items-center'>
+
+<input  defaultValue={option.value} type='checkbox'  className=' h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500'/>
+
+<label className=' ml-3 text-sm text-gray-600' htmlFor={option.value}>
+
+  {option.lable}
+</label>
+</div>)}
         </div>
         </div>
         </Grid>
 
 
-        <Grid item>
-
+        <Grid item xs={9} className=' space-y-5'>
+       {[1,1,1,1].map((item)=>  <OrderCard/>)}
         </Grid>
         </Grid>
     </div>
