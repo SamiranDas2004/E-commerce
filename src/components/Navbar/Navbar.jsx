@@ -18,6 +18,8 @@ import {Avatar, Button, Menu, MenuItem} from '@mui/material'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { deepPurple } from '@mui/material/colors'
+import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const navigation = {
   categories: [
@@ -148,6 +150,12 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+
+  const navigate= useNavigate()
+  const handelnavigate=(category,section, items,close)=>{
+    navigate(`/${category.id}/${section.id}/${items.id}`);
+    close();
+  }
 
   return (
     <div className="bg-white">
@@ -391,9 +399,11 @@ export default function Navbar() {
                                           >
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
-                                                <a href={item.href} className="hover:text-gray-800">
+                                                <NavLink 
+                                                to='/women'
+                                                 className="hover:text-gray-800">
                                                   {item.name}
-                                                </a>
+                                                </NavLink>
                                               </li>
                                             ))}
                                           </ul>
