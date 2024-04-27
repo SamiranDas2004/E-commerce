@@ -39,6 +39,14 @@ export const MensData = [
       originalPrice: "800",
       discount: "52% Off"
     },
+    {
+      imageUrl:
+        "https://rukminim2.flixcart.com/image/1000/1000/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=70&crop=false",
+   
+        price: "RS 380",
+        originalPrice: "800",
+        discount: "52% Off"
+      },
   {
     imageUrl:
       "https://rukminim2.flixcart.com/image/2000/2000/xif0q/jean/m/r/y/34-jk2-mjrp-02-zaysh-original-imagvjqy69gfssfv.jpeg?q=70&crop=false",
