@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import RegisterForm from './RegisterForm';
+import { useLocation } from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 const style = {
   position: 'absolute',
@@ -17,6 +19,7 @@ const style = {
   p: 4,
 };
 function AuthModel() {
+    const location= useLocation();
     const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -29,7 +32,7 @@ function AuthModel() {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-      <RegisterForm/>
+   {location.pathname==='/login'?<LoginForm open={open}/>:<RegisterForm/>}
       </Box>
     </Modal></div>
   )
