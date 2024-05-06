@@ -1,8 +1,10 @@
 import { Password } from '@mui/icons-material';
 import { TextField,Grid, Button } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+const navigate=useNavigate()
 
         const handelSubmit=(event)=>{
             event.preventDefault();
@@ -58,7 +60,16 @@ function LoginForm() {
         </Grid>
         </Grid>
         </form>
+        <div className='flex justify-center flex-col'>
+            <div className='py-3 flex items-center'>
+                <p>if you have already account?</p>
+                <Button onClick={()=>navigate("/Register")} className='ml-5' size='small' >
+                Register
+                </Button>
+            </div>
+        </div>
     </div>
+ 
   )
 }
 
