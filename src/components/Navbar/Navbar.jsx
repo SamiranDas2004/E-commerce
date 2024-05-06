@@ -12,6 +12,7 @@
   }
   ```
 */
+import AuthModel from '../../Auth/AuthModel'
 import { Fragment, useState } from 'react'
 import {} from '@mui/icons-material'
 import {Avatar, Button, Menu, MenuItem} from '@mui/material'
@@ -447,7 +448,7 @@ export default function Navbar() {
                 color:"white",
                 cursor:"pointer"
               }}
-              >E</Avatar>
+              > <AuthModel/></Avatar>
 
               <Menu
               id='basic-menu'
