@@ -12,7 +12,7 @@
   }
   ```
 */
-import AuthModel from '../../Auth/AuthModel'
+import AuthModel from '../../State/Auth/AuthModel'
 import { Fragment, useState } from 'react'
 import {} from '@mui/icons-material'
 import {Avatar, Button, Menu, MenuItem} from '@mui/material'
