@@ -1,12 +1,24 @@
 import { Password } from '@mui/icons-material';
 import { TextField,Grid, Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { register } from './Action';
 
 function RegisterForm() {
-    const navigate= useNavigate()
 
-        const handelSubmit=(event)=>{
+    const dispatch=useDispatch()
+    const navigate= useNavigate()
+    const jwt=localStorage.getItem(jwt)
+    const {auth}=useSelector(store=>store)
+useEffect(()=>{
+    if (jwt) {
+        dispatch(getUser())
+    }
+},[jwt,auth.jwt])
+
+
+    const handelSubmit=(event)=>{
             event.preventDefault();
 
             const data=new FormData(event.currentTarget);
@@ -17,6 +29,7 @@ function RegisterForm() {
                 email:data.get("email"),
                 Password:data.get("password")
             }
+            dispatch(register(userData))
             console.log(userData);
         }
     

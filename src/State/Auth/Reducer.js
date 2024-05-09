@@ -24,6 +24,6 @@ case REGISTER_FAILURE:
             return {...state,isLoading:false,error:action.payload}
 
             case LOGOUT:
-                return {initialSate}
+                return initialSate
     }
 }
