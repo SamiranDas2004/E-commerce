@@ -1,8 +1,9 @@
-# React + Vite
+নিঃশব্দে তোমার দিকে তাকিয়ে থাকা, যেন পৃথিবীর সমস্ত সৌন্দর্য আমার চোখে এসে ধরা দেয়।
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+তোমার হাসি আমার হৃদয়ের সব দুঃখ দূর করে, তোমার ভালোবাসা আমাকে সম্পূর্ণ করে তোলে।
 
-Currently, two official plugins are available:
+তোমার জন্য আমার হৃদয় সবসময় খোলা, তুমি আমার জীবনের প্রতিটি মুহূর্তে আনন্দের গান।
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+তোমার স্পর্শে আমি নিজেকে খুঁজে পাই, তোমার প্রেমে আমি স্বপ্ন দেখি অসীম সুখের।
+
+তুমি আমার জীবনের একমাত্র স্বপ্ন, তোমার সঙ্গে কাটানো প্রতিটি মুহূর্ত অমূল্য।
