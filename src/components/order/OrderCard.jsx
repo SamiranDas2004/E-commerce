@@ -8,7 +8,7 @@ function OrderCard() {
   const { ide } = useParams();
   console.log(ide);
   const selectedItem = MensData.find(item => item.id == ide);
-  console.log(selectedItem);
+  // console.log(selectedItem);
 
   return (
     <div className=' p-5 shadow-lg hover:shadow-2xl'>
@@ -28,7 +28,7 @@ function OrderCard() {
         </Grid>
 
         <Grid item xs={2}>
-<p>$80</p>
+<p>{selectedItem.price}</p>
         </Grid>
 
         {/* <Grid item xs={4}>
