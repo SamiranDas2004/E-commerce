@@ -89,6 +89,10 @@ const navigate=useNavigate()
 const handelClick =()=>{
   navigate('/cart')
 }
+
+const handelClickForSuggestedProduct=()=>{
+  navigate('/cart')
+}
   
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
@@ -453,8 +457,10 @@ const handelClick =()=>{
 
         <section className="pt-10">
         <h1>Similer products</h1>
-        <div className=" flex flex-wrap space-y-10">
-        {MensData.map((item)=> <HomesectionCard  product={item}/>)}
+        <div onClick={handelClickForSuggestedProduct} className=" flex flex-wrap space-y-10">
+        {MensData.map((item)=> <HomesectionCard
+        
+          product={item}/>)}
         </div>
         </section>
       </div>

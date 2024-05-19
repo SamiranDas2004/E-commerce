@@ -51,7 +51,7 @@ function CustomerRoutes() {
         <Route path='/product' element={<ProductDetails/>}></Route>
 
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/checkout' element={<Order/>}></Route>
+        <Route path='/checkout' element={<Checkout/>}></Route>
       </Routes>
       <Footer/>
 
