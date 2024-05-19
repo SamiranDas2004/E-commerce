@@ -4,17 +4,20 @@ import Product from './Product'
 import { useNavigate } from 'react-router-dom'
 
 function Productcard({Product}) {
-
   const navigate=useNavigate()
+
   const handelClick=()=>{
     navigate('/product')
   }
+  
   return (
-    <div 
-    onClick={handelClick}
-    className='productCard w-[15rem] m-3 transition-all cursor-pointer'>
+    <div
+    
+     className='productCard w-[15rem] m-3 transition-all cursor-pointer'>
       <div className='h-[20rem]'>
-<img className=' h-full w-full object-cover object-left-top' src={Product.imageUrl} alt=''/>
+<img 
+ onClick={handelClick}
+className=' h-full w-full object-cover object-left-top' src={Product.imageUrl} alt=''/>
       </div>
 
       <div className='textPart bg-white p-3'>

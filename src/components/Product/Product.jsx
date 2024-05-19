@@ -43,6 +43,10 @@ export default function Product() {
   const location = useLocation();
   const navigate=useNavigate();
 
+  
+ const handelClick=()=>{
+  navigate('/product')
+}
   const handelFilter = (value, sectionId) => {
     const searchParams = new URLSearchParams(location.search);
     let filterValue = searchParams.getAll(sectionId);
@@ -68,6 +72,8 @@ export default function Product() {
     const query = searchParams.toString();
     navigate({ search: `?${query}` });
 };
+
+
 
   return (
     <div className="bg-white"> 
@@ -400,8 +406,11 @@ export default function Product() {
               </div>
 
               {/* Product grid */}
-              <div className="lg:col-span-3 w-full">
-                <div className=" flex flex-wrap justify-center bg-white py-5">
+              <div 
+              className="lg:col-span-3 w-full">
+                <div 
+                
+                className=" flex flex-wrap justify-center bg-white py-5">
                   {MensData.map((Item) => (
                     <Productcard Product={Item} />
                   ))}
