@@ -47,11 +47,13 @@ function CustomerRoutes() {
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/women' element={<Product/>}></Route>
 
-        <Route path='/men' element={<Product/>}></Route>
-        <Route path='/product' element={<ProductDetails/>}></Route>
+        <Route path='/men/productDetails/:id' element={<ProductDetails />} />
 
-        <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/checkout' element={<Checkout/>}></Route>
+
+        <Route path='/men' element={<Product/>}></Route>
+
+        <Route path='/men/cart/:id' element={<Cart />} />
+        <Route path='/checkout/:ide' element={<Checkout/>}></Route>
       </Routes>
       <Footer/>
 

@@ -9,7 +9,8 @@ import { useLocation } from "react-router-dom";
 import AddDeliveryAddressForm from "./AddDeliveryAddressForm";
 
 import Order from "./Order";
-const steps = ["Login", "Add Address", "OrderSummary", "Payment"];
+import OrderCard from "../order/OrderCard";
+const steps = [ "OrderSummary","Add Address",  "Payment"];
 
 
 
@@ -126,7 +127,7 @@ export default function Checkout() {
             </Button>
           </Box>
           <div>
-            {activeStep===1?<AddDeliveryAddressForm/>:activeStep===2?<Order/>:null}
+            {activeStep===0?<OrderCard/>:activeStep===1?<AddDeliveryAddressForm/>:null}
           </div>
         </React.Fragment>
       )}

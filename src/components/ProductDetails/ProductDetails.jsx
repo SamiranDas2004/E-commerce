@@ -1,58 +1,64 @@
 import React from 'react';
-
+import { useNavigate, useParams } from 'react-router-dom';
+import { MensData } from '../../Data/mens';
 function ProductDetails() {
-  const product = [
-    {
-      imageUrl:
-        "https://rukminim2.flixcart.com/image/1000/1000/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=70&crop=false",
-      price: "RS 380",
-      originalPrice: "800",
-      discount: "52% Off",
-      title:"A nice half slevee t shirt"
-    }
-  ];
 
+const navigate=useNavigate();
+
+
+  const { id } = useParams();
+  const handelClick=()=>{
+
+  
+    navigate(`/checkout/${id}`)
+  }
+
+  const selectedItem = MensData.find(item => item.id == id);
+
+  
   return (
-    <div
-    
-     className='grid grid-cols-2'>
-    <div  className=" grioverflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
-      <img 
-      className='h-full w-full object-cover object-center p-20'
-      src={product[0].imageUrl} alt="Product" />
+    <div className="mx-auto w-[100vw]  bg-white shadow-md overflow-hidden md:max-w-2xl">
+    <div className="flex justify-between ">
+      <div className="gap h-48 w-full object-cover md:h-full">
+        <img className="h-48 w-full object-cover md:h-full " src={selectedItem.imageUrl} />
+      </div>
+      <div className="p-8">
+        <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">SOLSTICE</div>
+        <h1 className="block mt-1 text-lg leading-tight font-medium text-black">Men Boxy Fit Self Design Spread Collar Casual Shirt</h1>
+        <p className="mt-2">
+          <span className="text-green-500 font-semibold">999</span>{" "}
+          <span className="line-through text-red-500">374</span>{" "}
+          <span className="text-gray-500">62% Off</span>
+        </p>
+        <div className="mt-2 flex items-center">
+          <span className="text-yellow-500">★★★★☆</span>
+          <span className="ml-2 text-gray-600">117 reviews</span>
+        </div>
+        <div className="mt-4">
+          <span className="block text-gray-700">Size</span>
+          <div className="mt-2 flex space-x-2">
+            <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">S</button>
+            <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">M</button>
+            <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">L</button>
+            <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">XL</button>
+          </div>
+        </div>
+        <button 
+        onClick={handelClick}
+        className="mt-4 w-full bg-black text-white py-2 px-4 rounded">Buy Now</button>
+        <div className="mt-4">
+          <h2 className="text-gray-700">Highlights</h2>
+          <ul className="list-disc pl-5 mt-2 text-gray-500">
+            <li>Hand cut and sewn locally</li>
+            <li>Dyed with our proprietary colors</li>
+            <li>Pre-washed & pre-shrunk</li>
+            <li>Ultra-soft 100% cotton</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div>
-    <div  className=' flex flex-center  text-bold text-3xl pt-12'>
-{product[0].title}
-    </div>
-
-    
-    </div>
-    </div>
+  </div>
   );
 }
 
 export default ProductDetails;
-
-
-{/* <div className="flex flex-col items-center">
-<div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
-  <img
-    src={product.images[0].src}
-    alt={product.images[0].alt}
-    className="h-full w-full object-cover object-center"
-  />
-</div>
-<div className=" flex flex-wrap space-x-5 justify-center">
-  {product.images.map((item) => (
-    <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
-      <img
-        src={item.src}
-        alt={item.alt}
-        className="h-full w-full object-cover object-center"
-      />
-    </div>
-  ))}
-</div>
-</div> */}

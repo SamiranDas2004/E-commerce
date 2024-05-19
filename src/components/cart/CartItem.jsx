@@ -3,8 +3,12 @@ import IconButton from '@mui/material/IconButton'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
+function CartItem(props) {
 
-function CartItem() {
+  const { id } = useParams();
+
+  const selectedItem = MensData.find(item => item.id == id);
   return (
     <div className="p-5 shadow-lg border rounded-md">
       <div className="flex items-center">
