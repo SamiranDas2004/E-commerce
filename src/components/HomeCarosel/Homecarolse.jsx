@@ -3,6 +3,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Maincarosoul } from '../../MaincarouselData/MainCarosouldata.js';
 import Button from '@mui/material/Button'
+// import HomeVideo from '../HomesectionCard/HomeVideo.jsx';
 
 function Maincrosel() {
 
@@ -14,12 +15,13 @@ function Maincrosel() {
         mouseTracking
         disableButtonsControls
         items={items}
-        // autoPlay
-        // autoPlayInterval={1000}
+        autoPlay
+        autoPlayInterval={2000}
         infinite
         controlsStrategy="alternate"
     />
     </div>
+    {/* <HomeVideo/> */}
     
     </div>
     

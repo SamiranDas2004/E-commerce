@@ -8,12 +8,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './Productcard.css'; // Import CSS for hover effect
 
-function ProductCard(props) {
+function ShowCard(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
     const { id } = props.Items;
-    navigate(`/men/productDetails/${id}`);
+    navigate(`/shoe/productDetails/${id}`);
   };
 
   return (
@@ -45,4 +45,4 @@ function ProductCard(props) {
   );
 }
 
-export default ProductCard;
+export default ShowCard;

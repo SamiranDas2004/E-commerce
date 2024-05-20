@@ -1,14 +1,14 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 import AdjustIcon from '@mui/icons-material/Adjust';
-import { MensData } from '../../Data/mens';
+import { ShoesData} from '../../Data/show';
 import { useParams } from 'react-router-dom';
 
-function OrderCard() {
-  const { id } = useParams();
-  console.log(id);
-  const selectedItem = MensData.find(item => item.id == id);
-  // console.log(selectedItem);
+function ShowOrderCard() {
+  const { ide } = useParams();
+  console.log(ide);
+  const selectedItem = ShoesData.find(item => item.id == ide);
+  console.log(selectedItem);
 
   return (
     <div className=' p-5 shadow-lg hover:shadow-2xl'>
@@ -50,4 +50,4 @@ function OrderCard() {
   )
 }
 
-export default OrderCard
+export default ShowOrderCard

@@ -1,18 +1,19 @@
 import React from 'react';
-import { MensData } from '../../Data/mens';
+import { ShoesData} from '../../Data/show';
 import Productcard from './Productcard';
 import './Productcard.css'; // Import the CSS file
+import ShowCard from './ShowCard';
 
-export function Product() {
+export function Show() {
   return (
     <div className="product-grid">
-      {MensData.map((item) => (
+      {ShoesData.map((item) => (
         <div key={item.id} className="product-grid-item">
-          <Productcard Items={item} />
+          <ShowCard Items={item} />
         </div>
       ))}
     </div>
   );
 }
 
-export default Product;
+export default Show;

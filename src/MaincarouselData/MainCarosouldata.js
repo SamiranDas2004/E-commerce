@@ -1,15 +1,15 @@
 export const Maincarosoul=[
     {
-        image:"https://manyavar.scene7.com/is/image/manyavar/HP_Persona_Kiara_D_11-12-2023-06-07-1?$WT%5FHP%2FMLP%2FWLP%5FHero%5FD$"
+        image:"https://fanaacs.com/cdn/shop/files/Euro_2024_1f826410-e507-450e-92ff-8d1a616e9d94.png?v=1713528109&width=1100"
     },
     {
-        image:"https://manyavar.scene7.com/is/image/manyavar/HP%5FPersona%5FHoli%5FD%5F19%2D02%2D2024%2D10%2D33?$WT%5FHP%2FMLP%2FWLP%5FHero%5FD$"
+        image:"https://fanaacs.com/cdn/shop/files/Copa_America_2024_1.png?v=1713528096&width=1100"
     },
     {
-        image:"https://manyavar.scene7.com/is/image/manyavar/HP%5FPersona%5FNov%5FRC%5FD%5F10%2D11%2D2023%2D06%2D40?$WT%5FHP%2FMLP%2FWLP%5FHero%5FD$"
+        image:"https://fanaacs.com/cdn/shop/files/1.png?v=1664424026&width=1100"
     },
     {
-        image:"https://manyavar.scene7.com/is/image/manyavar/HP%5FPersona%5FIamtheGroom%5FD%5F17%2D10%2D2023%2D13%2D03?$WT%5FHP%2FMLP%2FWLP%5FHero%5FD$"
+        image:"https://fanaacs.com/cdn/shop/files/New_Season_2022-23_2.png?v=1658541303&width=1880"
     },
    
 ]

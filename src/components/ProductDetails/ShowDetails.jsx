@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { MensData } from '../../Data/mens';
-function ProductDetails() {
+import { ShoesData} from '../../Data/show';
+function ShowDetails() {
 
 const navigate=useNavigate();
 
@@ -10,10 +10,10 @@ const navigate=useNavigate();
   const handelClick=()=>{
 
   
-    navigate(`/checkout/${id}`)
+    navigate(`/shoe/checkout/${id}`)
   }
 
-  const selectedItem = MensData.find(item => item.id == id);
+  const selectedItem = ShoesData.find(item => item.id == id);
 
   
   return (
@@ -61,4 +61,4 @@ const navigate=useNavigate();
   );
 }
 
-export default ProductDetails;
+export default ShowDetails;

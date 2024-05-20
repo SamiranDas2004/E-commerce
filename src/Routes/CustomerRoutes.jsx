@@ -14,6 +14,9 @@ import OrderTracker from '../components/order/OrderTracker'
 import Order from '../components/order/Order'
 import RegisterForm from '../State/Auth/RegisterForm'
 import LoginForm from '../State/Auth/LoginForm'
+import Show from '../components/Product/Show'
+import ShowDetails from '../components/ProductDetails/ShowDetails'
+import ShoeCheckout from '../components/Checkout/ShoeCheckOut'
 
 function CustomerRoutes() {
   return (
@@ -47,16 +50,18 @@ function CustomerRoutes() {
       <Routes>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/women' element={<Product/>}></Route>
+        <Route path='/shoe/productDetails/:id' element={<ShowDetails/>}></Route>
         <Route path='/auth/signup' element={<RegisterForm/>}/>
         <Route path='/auth/login' element={<LoginForm/>}/>
         <Route path='/men/productDetails/:id' element={<ProductDetails />} />
 
 
         <Route path='/men' element={<Product/>}></Route>
+        <Route path='/shoe' element={<Show/>}></Route>
 
         <Route path='/men/cart/:id' element={<Cart />} />
-        <Route path='/checkout/:ide' element={<Checkout/>}></Route>
+        <Route path='/checkout/:id' element={<Checkout/>}></Route>
+        <Route path='/shoe/checkout/:ide' element={<ShoeCheckout/>}></Route>
       </Routes>
       <Footer/>
 
