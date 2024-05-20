@@ -1,105 +1,151 @@
-import { Password } from '@mui/icons-material';
-import { TextField,Grid, Button } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from './Action';
-
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function RegisterForm() {
 
-    const dispatch=useDispatch()
-    const navigate= useNavigate()
-    const jwt=localStorage.getItem(jwt)
-    const {auth}=useSelector(store=>store)
-useEffect(()=>{
-    if (jwt) {
-        dispatch(getUser())
-    }
-},[jwt,auth.jwt])
+  const navigate=useNavigate()
 
-
-    const handelSubmit=(event)=>{
-            event.preventDefault();
-
-            const data=new FormData(event.currentTarget);
-
-            const userData={
-                firstName:data.get("firstName"),
-                lastName:data.get("lastName"),
-                email:data.get("email"),
-                Password:data.get("password")
-            }
-            dispatch(register(userData))
-            console.log(userData);
-        }
-    
-  return (
-    <div>
-        <form onSubmit={handelSubmit}>
-        <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-        <TextField
-            required
-            id='firstName'
-            name='firstName'
-            label='First Name'
-            autoComplete='given-name'
-        />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-        <TextField
-            required
-            id='lastName'
-            name='lastName'
-            label='Last Name'
-            autoComplete='last-Name'
-        />
-        </Grid>
-        <Grid item xs={12}>
-        <TextField
-            required
-            id='email'
-            name='email'
-            fullWidth
-            label='email'
-            autoComplete='email'
-        />
-     
-        </Grid>
-        <Grid item xs={12} >
-        <TextField
-            required
-            fullWidth
-            id='password'
-            name='password'
-            label='Password'
-            autoComplete='password'
-        />
-        </Grid>
-        <Grid item xs={12}>
-        <Button 
-        fullWidth
-        className='bg-[#9155FD] w-full'
-        type='submit'
-        variant='conatained'
-        size='large'
-        sx={{padding:".8rem 0"}}
-        >
-            Register
-        </Button>
-        </Grid>
-        </Grid>
-        </form>
-        <div className='flex justify-center flex-col'>
-            <div className='py-3 flex items-center'>
-                <p>if you have already account?</p>
-                <Button onClick={()=>navigate("/login")} className='ml-5' size='small' >
-                Login
-                </Button>
-            </div>
-        </div>
-    </div>
-  )
+const handelNavigate=()=>{
+  navigate('/auth/login')
 }
 
-export default RegisterForm
+  const [user, setUser] = useState({
+    username:'',
+    email:'',
+    password:''
+  });
+  const notify = () => toast("Registration successful!");
+  const [loading,setLoading]=useState(false)
+
+  const handleSubmit = async () => {
+    try {
+      setLoading(true)
+      const response = await axios.post('http://localhost:3000/auth/signup', user);
+      notify()
+      
+      console.log('hello');
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }finally{
+      setLoading(false)
+    }
+
+  };
+  
+  useEffect(() => {
+    
+    if (!loading) {
+     
+      setUser({
+        username: '',
+        email: '',
+        password: ''
+      });
+    }
+  }, [loading]);
+
+  return (
+    <form className="flex flex-col items-center justify-center h-screen">
+      <div className="md:flex md:items-center mb-6">
+        <div className="md:w-1/3">
+          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-full-name">
+            Full Name
+          </label>
+        </div>
+        <div className="md:w-2/3">
+          <input 
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+            id="inline-full-name" 
+            type="text" 
+            placeholder="User Name" 
+            value={user.username} 
+            onChange={(e) => setUser({...user, username: e.target.value})}
+            // onChange={handleFullNameChange}
+          />
+        </div>
+      </div>
+      <div className="md:flex md:items-center mb-6">
+        <div className="md:w-1/3">
+          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-password">
+            Email
+          </label>
+        </div>
+        <div className="md:w-2/3">
+          <input 
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+            id="inline-password" 
+            type="text" 
+            placeholder="Email" 
+            value={user.email} 
+            onChange={(e) => setUser({...user, email: e.target.value})}
+            // onChange={handlemail}
+          
+          />
+        </div>
+      </div>
+      <div className="md:flex md:items-center mb-6">
+        <div className="md:w-1/3">
+          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-password">
+            Password
+          </label>
+        </div>
+        <div className="md:w-2/3">
+          <input 
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+            id="inline-password" 
+            type="password" 
+            placeholder="******************" 
+            value={user.password} 
+            onChange={(e) => setUser({...user, password: e.target.value})}
+          />
+        </div>
+      </div>
+   
+      <div className="md:flex md:items-center">
+        <div className="md:w-1/3"></div>
+        <div className="md:w-2/3">
+        <div className="flex gap-4">
+        <div class="md:w-2/3">
+      <button   
+      
+      onClick={handleSubmit}
+       class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+        Sign Up
+      </button>
+    </div>
+  <button 
+    className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" 
+    type="button" 
+    onClick={handelNavigate}
+
+  >
+    Login
+  </button>
+</div>
+          <ToastContainer 
+          position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition: Bounce
+          
+           />
+           <p className=' text-xs'>If you are already signup then click on the Login button</p>
+        </div>
+      </div>
+    </form>
+  );
+}
+
+export default RegisterForm;

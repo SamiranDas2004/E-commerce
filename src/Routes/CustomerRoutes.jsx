@@ -12,6 +12,8 @@ import OrderDetails from '../components/order/OrderDetails'
 import OrderCard from '../components/order/OrderCard'
 import OrderTracker from '../components/order/OrderTracker'
 import Order from '../components/order/Order'
+import RegisterForm from '../State/Auth/RegisterForm'
+import LoginForm from '../State/Auth/LoginForm'
 
 function CustomerRoutes() {
   return (
@@ -19,7 +21,7 @@ function CustomerRoutes() {
 //         <div>
 // <Navbar/>
 //         </div>
-//         <Routes>
+//         <Routes>a
 //             <Route path='/' element={<Homepage/>}></Route>
 //             <Route path='/cart' element={<Cart/>}></Route>
 //             <Route path='/women' element={<Product/>}></Route>
@@ -46,7 +48,8 @@ function CustomerRoutes() {
         <Route path='/' element={<Homepage/>}/>
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/women' element={<Product/>}></Route>
-
+        <Route path='/auth/signup' element={<RegisterForm/>}/>
+        <Route path='/auth/login' element={<LoginForm/>}/>
         <Route path='/men/productDetails/:id' element={<ProductDetails />} />
 
 
