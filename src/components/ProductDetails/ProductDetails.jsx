@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { MensData } from "../../Data/mens";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 function ProductDetails() {
-  const [amount, setamount] = useState(350);
+  const { id } = useParams();
+  const selectedItem = MensData.find((item) => item.id == id);
+  // const [amount, setamount] = useState(10);
+  // setamount(selectedItem.price);
+
+  // comment
+  const amount = selectedItem.price;
 
   const navigate = useNavigate();
 
-  const { id } = useParams();
   const handlePayment = async () => {
+    console.log(amount);
     try {
       const res = await fetch(`http://localhost:3000/api/payment/order`, {
         method: "POST",
@@ -37,7 +43,7 @@ function ProductDetails() {
       key: "rzp_test_PH4sMZMaizjRIb",
       amount: data.amount,
       currency: data.currency,
-      name: "Devknus",
+      name: "ActiveLife Store",
       description: "Test Mode",
       order_id: data.id,
       handler: async (response) => {
@@ -72,8 +78,6 @@ function ProductDetails() {
     rzp1.open();
   };
 
-  const selectedItem = MensData.find((item) => item.id == id);
-
   return (
     <div className="mx-auto w-[100vw]  bg-white shadow-md overflow-hidden md:max-w-2xl">
       <div className="flex justify-between ">
@@ -91,7 +95,9 @@ function ProductDetails() {
             Men Boxy Fit Self Design Spread Collar Casual Shirt
           </h1>
           <p className="mt-2">
-            <span className="text-green-500 font-semibold">999</span>{" "}
+            <span className="text-green-500 font-semibold">
+              {selectedItem.price}
+            </span>{" "}
             <span className="line-through text-red-500">374</span>{" "}
             <span className="text-gray-500">62% Off</span>
           </p>
