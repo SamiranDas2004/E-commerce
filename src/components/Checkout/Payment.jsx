@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { MensData } from "../../Data/mens";
 import { useNavigate, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import Paymentsuccess from "./Paymentsuccess";
 
 const Payment = () => {
   const { id } = useParams();
@@ -71,6 +72,7 @@ const Payment = () => {
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
+    navigate("/payment-success");
   };
 
   return <div></div>;

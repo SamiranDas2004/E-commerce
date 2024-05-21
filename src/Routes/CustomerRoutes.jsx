@@ -18,6 +18,7 @@ import LoginForm from "../State/Auth/LoginForm";
 import Show from "../components/Product/Show";
 import ShowDetails from "../components/ProductDetails/ShowDetails";
 import ShoeCheckout from "../components/Checkout/ShoeCheckOut";
+import Paymentsuccess from "../components/Checkout/Paymentsuccess";
 
 function CustomerRoutes() {
   return (
@@ -63,7 +64,7 @@ function CustomerRoutes() {
         <Route path="/men" element={<Product />}></Route>
         <Route path="/shoe" element={<Show />}></Route>
 
-        <Route path="/men/cart/:id" element={<Cart />} />
+        <Route path="/payment-success" element={<Paymentsuccess />} />
         <Route path="/checkout/:id" element={<Checkout />}></Route>
         <Route path="/shoe/checkout/:ide" element={<ShoeCheckout />}></Route>
       </Routes>
