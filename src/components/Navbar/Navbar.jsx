@@ -1,16 +1,16 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'jersey', href: '/men', current: false },
-  { name: 'Shoe', href: '/shoe', current: false },
-  { name: 'Contact Us', href: '/contact Us', current: false },
-]
+  { name: "Home", href: "/", current: true },
+  { name: "jersey", href: "/men", current: false },
+  { name: "Shoe", href: "/shoe", current: false },
+  { name: "Contact Us", href: "/contact-us", current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
@@ -47,10 +47,12 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
@@ -95,24 +97,26 @@ export default function Example() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Your Profile
                           </a>
                         )}
                       </Menu.Item>
-<div>                      <Menu.Item>
-  <Link to='/auth/signup'>
-    Sign Up
-  </Link>
-</Menu.Item></div>
-<div>
-<Menu.Item>
-  <Link to='/auth/login'>
-    Log In
-  </Link>
-</Menu.Item>
-</div>
+                      <div>
+                        {" "}
+                        <Menu.Item>
+                          <Link to="/auth/signup">Sign Up</Link>
+                        </Menu.Item>
+                      </div>
+                      <div>
+                        <Menu.Item>
+                          <Link to="/auth/login">Log In</Link>
+                        </Menu.Item>
+                      </div>
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -128,10 +132,12 @@ export default function Example() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -141,5 +147,5 @@ export default function Example() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
