@@ -32,14 +32,16 @@ function ProductDetails() {
             SOLSTICE
           </div>
           <h1 className="block mt-1 text-lg leading-tight font-medium text-black">
-            Men Boxy Fit Self Design Spread Collar Casual Shirt
+            {selectedItem.description}
           </h1>
           <p className="mt-2">
             <span className="text-green-500 font-semibold">
               {selectedItem.price}
             </span>{" "}
-            <span className="line-through text-red-500">374</span>{" "}
-            <span className="text-gray-500">62% Off</span>
+            <span className="line-through text-red-500">
+              {selectedItem.originalPrice}
+            </span>{" "}
+            <span className="text-gray-500">{selectedItem.discount}</span>
           </p>
           <div className="mt-2 flex items-center">
             <span className="text-yellow-500">★★★★☆</span>
@@ -48,16 +50,16 @@ function ProductDetails() {
           <div className="mt-4">
             <span className="block text-gray-700">Size</span>
             <div className="mt-2 flex space-x-2">
-              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">
+              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded hover:bg-gray-500">
                 S
               </button>
-              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">
+              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded  hover:bg-gray-500">
                 M
               </button>
-              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">
+              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded  hover:bg-gray-500">
                 L
               </button>
-              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded">
+              <button className="w-10 h-10 bg-gray-200 text-gray-700 rounded  hover:bg-gray-500">
                 XL
               </button>
             </div>
