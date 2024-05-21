@@ -3,8 +3,9 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Maincarosoul } from '../../MaincarouselData/MainCarosouldata.js';
 import Button from '@mui/material/Button'
-// import HomeVideo from '../HomesectionCard/HomeVideo.jsx';
-
+import HomeVideo from '../HomesectionCard/HomeVideo.jsx';
+import Video from '../HomesectionCard/Video.jsx';
+import Text from '../HomesectionCard/Text.jsx';
 function Maincrosel() {
 
     const items = Maincarosoul.map((pic)=> <img class="flex justify-center w-full  items-center h-screen" width="" src={pic.image}/>)
@@ -21,7 +22,10 @@ function Maincrosel() {
         controlsStrategy="alternate"
     />
     </div>
-    {/* <HomeVideo/> */}
+    <HomeVideo/>
+    <Text/>
+    <Video/>
+   
     
     </div>
     

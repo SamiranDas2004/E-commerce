@@ -1,23 +1,18 @@
-// import React from 'react';
+import React from 'react';
 
+function HomeVideo() {
+  return (
+    <div className="grid grid-cols-2 gap-4 p-4">
+      <div className="video-wrapper">
+        <img   
+      
+        src="https://pbs.twimg.com/media/ERZaFQ9W4AAyzEo.jpg" alt="Video 1" className="w-full h-custom object-cover"/>
+      </div>
+      <div className="video-wrapper">
+        <img src="https://pbs.twimg.com/media/ERZaFQ9W4AAyzEo.jpg" alt="Video 2" className="w-full h-custom object-cover"/>
+      </div>
+    </div>
+  );
+}
 
-// function HomeVideo() {
-//   return (
-//     <div className="home-video-container">
-//       <div className="video-wrapper">
-//         <video width="600" controls>
-//           <source src="e-commerce\src\Data\3888268-hd_720_1366_50fps.mp4" type="video/mp4" />
-//           Your browser does not support the video tag.
-//         </video>
-//       </div>
-//       <div className="video-wrapper">
-//         <video width="600" controls>
-//           <source src="" type="video/mp4" />
-//           Your browser does not support the video tag.
-//         </video>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default HomeVideo;
+export default HomeVideo;
