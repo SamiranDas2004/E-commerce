@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import Payment from "./Payment";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useLocation } from "react-router-dom";
@@ -10,17 +11,9 @@ import AddDeliveryAddressForm from "./AddDeliveryAddressForm";
 
 import Order from "./Order";
 import OrderCard from "../order/OrderCard";
-const steps = [ "OrderSummary","Add Address",  "Payment"];
-
-
-
+const steps = ["OrderSummary", "Add Address", "Payment"];
 
 //setup the params part
-
-
-
-
-
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -127,11 +120,16 @@ export default function Checkout() {
             </Button>
           </Box>
           <div>
-            {activeStep===0?<OrderCard/>:activeStep===1?<AddDeliveryAddressForm/>:null}
+            {activeStep === 0 ? (
+              <OrderCard />
+            ) : activeStep === 1 ? (
+              <AddDeliveryAddressForm />
+            ) : activeStep === 2 ? (
+              <Payment />
+            ) : null}
           </div>
         </React.Fragment>
       )}
     </Box>
-
   );
 }

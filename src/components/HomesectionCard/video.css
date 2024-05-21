@@ -1,6 +1,7 @@
 .video-container {
     overflow: hidden;
-    height: calc(16rem + 4rem); /* Adjust the total height as needed */
+    height: calc(40rem + 4rem);
+     /* Adjust the total height as needed */
     position: relative;
     display: flex;
     justify-content: center;
