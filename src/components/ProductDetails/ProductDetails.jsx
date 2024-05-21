@@ -26,8 +26,8 @@ const navigate=useNavigate();
         <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">SOLSTICE</div>
         <h1 className="block mt-1 text-lg leading-tight font-medium text-black">Men Boxy Fit Self Design Spread Collar Casual Shirt</h1>
         <p className="mt-2">
-          <span className="text-green-500 font-semibold">999</span>{" "}
-          <span className="line-through text-red-500">374</span>{" "}
+          <span className="text-green-500 font-semibold">{selectedItem.price}</span>{" "}
+          <span className="line-through text-red-500">{selectedItem.discount}</span>{" "}
           <span className="text-gray-500">62% Off</span>
         </p>
         <div className="mt-2 flex items-center">
